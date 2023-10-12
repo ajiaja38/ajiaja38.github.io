@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    /* background-color: #f8f8f8; */
+    font-family: 'Quicksand', serif;
+}
+
+/* Navigation-bar */
+nav{
+    z-index: 9999;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    background-color: #2a2a2a;
+    justify-content:space-between;
+    position: fixed;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+nav header{
+    display: flex;
+    align-items: center;
+    font-size: .7rem;
+}
+
+nav header a{
+    font-family: 'Playfair Display', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+nav header a:hover{
+    color: #ff6060;
+}
+
+nav ul{
+    position: fixed;
+    top: -100%;
+    right: 0;
+    background-color: #2a2a2a;
+    width: 100%;
+    text-align: center;
+    transition: .5s ease;
+    z-index: -1;
+    box-shadow: 0px 3px 5px -3px black;
+}
+
+nav ul.active{
+    top: 52px;
+    z-index: -1;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 20px auto;
+    padding: .4rem;
+    transition: .2s ease-in-out;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li:hover{
+    background-color: #ff6060;
+    border-radius: 3px;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-icon span{
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.hamburger-icon.active span:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+    background-color: #ff6060;
+}
+
+.hamburger-icon.active span:nth-child(2){
+    opacity: 0;
+    background-color: #ff6060;
+}
+
+.hamburger-icon.active span:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
+    background-color: #ff6060;
+}
+
+/* Jumbotron */
+.jumbotron{
+    background-image:linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.3)),url(img/b.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* heroCard (card dalam jumbotron) */
+.jumbotron-content{
+    width: 90%;
+    height: 70vh;
+    margin-top: 80px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    color: white;
+}
+
+.img-jumbotron-content img{
+    width: 15rem;
+    border: 3px solid white;
+}
+
+.text-jumbotron-content{
+    line-height: 4rem;
+}
+
+.text-jumbotron-content h1{
+    font-family: 'Playfair Display';
+    font-weight: bold;
+}
+
+.text-jumbotron-content .tagline{
+    font-size: 1.3rem;
+}
+
+.text-jumbotron-content a{
+    color: white;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    background-color: #ff6060;
+    transition: .2s ease-in-out;
+}
+
+.text-jumbotron-content a:hover{
+    background-color: #F55353;
+}
+
+
+main article{
+    margin: 30px 0;
+    padding: 10px;
+    max-width: 800px;
+}
+
+main article h1{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main article p{
+    font-size: 1.3rem;
+}
+
+/* About */
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-container{
+    padding: 1rem;
+    max-width: 40rem;
+}
+
+.about-container .ajiimg{
+    width: 10rem;
+    margin: 0 1rem 0 0;
+    float: left;
+}
+
+.about-container p{
+    font-size: 1rem;
+}
+
+.first-word-article{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.about-container .beach{
+    width: 10rem;
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+.about-container .ksr{
+    max-width: 12rem;
+    margin: 1rem 1rem 0 0;
+    float: left;
+}
+
+/* Gallery */
+.image{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.image img{
+    width: 10rem;
+    object-fit: cover;
+    object-position: center;
+    margin: 5px;
+    border: 5px solid #2a2a2a;
+    transition: .2s ease-in-out;
+}
+
+.image img:hover{
+    border-color: white;
+    box-shadow: 0px 0px 1px #2a2a2a;
+}
+
+.wave{
+    display: block;
+    margin-top: 10px;
+}
+
+/* Quotes */
+.quotes{
+    background-color: #252525;
+    color: white;
+    margin: 5rem 0;
+    padding: 5rem 0;
+}
+
+.quotes-container{
+    display: flex;
+    justify-content: center;
+}
+
+.quotes figure{
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quotes-container figure > p{
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.quotes-container figure > p::before, .quotes-container figure > p::after{
+    content: '"';
+}
+
+.quotes-container figcaption>p{
+    margin-top: 1.5rem;
+}
+
+/* Asides */
+aside{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside-container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside-container header h2{
+    margin-bottom: 1.5rem;
+}
+
+.contact-me, .profile{
+    width: 23rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+}
+
+.form{
+    padding: .5rem;
+    margin: .2rem;
+    outline: none;
+    width: 96.6%;
+    border: 1px solid #252525;
+    height: 3rem;
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+}
+
+.form:hover{
+    background-color: #f8f8f8;
+}
+
+.area-messages{
+    height: 6rem;
+}
+
+.submit{
+    border: none;
+    color: white;
+    font-size: 1rem;
+    background-color: #ff6060;
+    transition: .2s ease-in-out;
+}
+
+.submit:hover{
+    background-color: #e04646;
+}
+
+.submit:active{
+    background-color: #F55353;
+}
+
+.biodata img{
+    width: 7rem;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.biodata p{
+    font-size: .8rem;
+}
+
+.biodata a{
+    text-decoration: none;
+    color: black;
+    font-size: 2.5rem;
+    transition: .2s ease-in-out;
+}
+
+.biodata .green:hover{
+    color: #14C38E;
+}
+
+.biodata .green:active{
+    color: #14da9e;
+}
+
+.biodata .red:hover{
+    color: #ff6060;
+}
+
+.biodata .red:active{
+    color: #e04646;
+}
+
+.biodata .blue:hover{
+    color: #548CFF;
+}
+
+.biodata .blue:active{
+    color: #6e9eff;
+}
+
+/* Footer */
+footer{
+    background-color: #2a2a2a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    padding: 10px;
+    color: white;
+    margin: 20px 0 0 0;
+    flex-wrap: wrap;
+}
+
+.firstFooter{
+    text-align: center;
+    padding: .2rem;
+}
+
+.firstFooter h1{
+    font-family: 'Playfair Display';
+}
+
+.firstFooter h1{
+    font-size: 1.7rem;
+}
+
+.firstFooter p{
+    font-size: .6rem;
+}
+
+.secondFooter{
+    flex-basis: 25%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sosmed{
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 50px;
+    width: 15rem;
+    height: 50px;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.sosmed a{
+    margin-left: 3.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    position: relative;
+    margin-top: 10px;
+    width: 30px;
+}
+.github{
+    background-color: #14C38E;
+    transition: .3s;
+    margin-top: 2rem;
+}
+
+.github:hover{
+    background-color: #12b181;
+}
+
+.github:active{
+    background-color: #14da9e;
+}
+
+.instagram{
+    background-color: #F55353;
+    transition: .3s;
+}
+
+.instagram:hover{
+    background-color: #e04646;
+}
+
+.instagram:active{
+    background-color: #ff6060;
+}
+
+.linkedin{
+    background-color: #548CFF;
+    transition: .3s;
+    margin-bottom: 0;
+}
+
+.linkedin:hover{
+    background-color: #6e9eff;
+}
+
+.linkedin:active{
+    background-color: #99bbff;
+}
+
+.thirdFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navFooter ul{
+    list-style: none;
+    text-align: center;
+}
+
+.navFooter li{
+    margin: 2rem;
+}
+
+.navFooter ul li a{
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+    padding: .4rem;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.navFooter ul li a:hover{
+    background-color: #ff6060;
+}
+
+.fourthFooter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: .7rem;
+    color: white;
+    padding: 1rem;
+    background-color: #52575D;
+}
+
+@media only screen and (min-width: 768px) {
+    /* Navbar */
+    nav{
+        padding: 1rem;
+        justify-content:space-between;
+    }
+
+    nav header{
+        font-size: 1.4rem;
+        margin-left: 3rem;
+    }
+
+    nav ul{
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-right: 3rem;
+        top: 0;
+        right: 0;
+        width: auto;
+        box-shadow: none;
+    }
+
+    nav ul li{
+        margin: 0 1.5rem;
+    }
+
+    .hamburger-icon{
+        display: none;   
+    }
+
+    /* Jumbotron Content */
+    .jumbotron-content{
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-evenly;
+        color: white;
+        text-align: left;
+    }
+    
+    .img-jumbotron-content img{
+        width: 400px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    
+    .text-jumbotron-content{
+        line-height: 4rem;
+    }
+
+    .text-jumbotron-content h1{
+        font-size: 5rem;
+    }
+    
+    .text-jumbotron-content .tagline{
+        font-size: 1.652rem;
+    }
+    
+    .text-jumbotron-content a{
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #ff6060;
+        transition: .2s ease-in-out;
+    }
+
+    main article{
+        max-width: 900rem;
+    }
+
+    /* about */
+    .about-container{
+        max-width: 65rem;
+        text-align: justify;
+    }
+
+    .about-container .ajiimg{
+        width: 20rem;
+    }
+
+    .about-container .beach{
+        width: 30rem;
+    }
+
+    .about-container p{
+        font-size: 1.5rem;
+    }
+
+    .first-word-article{
+        font-size: 3rem;
+    }
+
+    .about-container .ksr{
+        max-width: 30rem;
+    }
+
+    /* Gallery */
+    .image{
+        justify-content: center;
+    }
+    .image img{
+        width: 20rem;
+        margin: 1rem;
+    }
+
+    /* Quotes */
+    .quotes figure{
+        max-width: 60rem;
+    }
+
+    /* asides */
+    .aside-container{
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: flex-start;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        border-radius: 5px;
+        width: 82%;
+        display: flex;
+    }
+
+    .contact-me, .profile{
+        width: 100rem;
+    }
+
+    .form{
+        padding: .5rem;
+        outline: none;
+        width: 96.6%;
+        margin: .5rem;
+    }
+
+    .area-messages{
+        height: 9rem;
+    }
+
+    .biodata p{
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .container-footer{
+        width: 80rem;
+        flex-direction: row;
+    }
+
+    .firstFooter{
+        padding-top: 50px;
+        flex-basis: 50%;
+        height: 280px;
+        margin: 10px;
+        text-align: right;
+        padding: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .firstFooter h1{
+        font-size: 4rem;
+    }
+    .firstFooter p{
+        font-size: 1.5rem;
+    }
+    .secondFooter{
+        flex-basis: 25%;
+        height: 280px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sosmed{
+        margin: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .sosmed a{
+        margin-left: 2rem;
+    }
+
+    .thirdFooter{
+        flex-basis: 15%;
+        height: 280px;
+        margin: 10px;
+    }
+    .fourthFooter{
+        font-size: 1rem;
+    }
+}
